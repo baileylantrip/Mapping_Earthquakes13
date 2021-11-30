@@ -1,8 +1,11 @@
 // Add console.log to check to see if our code is working.
+
 //console.log("working");
 
 // Create the map object with center and zoom level.
 //let map = L.map('mapid').setView([30, 30], 2);
+
+
 
 
 // We create the tile layer that will be the background of our map.
@@ -11,6 +14,7 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/t
     maxZoom: 18,
     accessToken: API_KEY
 });
+
 
 // We create the dark view tile layer that will be an option for our map.
 let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -45,6 +49,5 @@ d3.json(airportData).then(function(data) {
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJSON(data).addTo(map);
 });
-
 
 
