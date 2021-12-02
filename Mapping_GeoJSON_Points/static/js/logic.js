@@ -24,8 +24,8 @@ let baseMaps = {
     Street: streets,
     Dark: dark
   };
-  
-// Create the map object with center, zoom level and default layer.
+
+  // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
     center: [30, 30],
     zoom: 2,
@@ -35,6 +35,8 @@ let map = L.map('mapid', {
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 
+// Then we add our 'graymap' tile layer to the map.
+////streets.addTo(map);
 
 // Accessing the airport GeoJSON URL
 let airportData = "https://raw.githubusercontent.com/baileylantrip/Mapping_Earthquakes13/Mapping_GeoJSON_Points/majorAirports.json";
@@ -45,3 +47,4 @@ d3.json(airportData).then(function(data) {
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJSON(data).addTo(map);
 });
+
